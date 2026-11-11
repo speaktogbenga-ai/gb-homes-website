@@ -16,10 +16,10 @@ window.GB_CONFIG = {
   instagram: "realtorgbhome",             // handle without the @
   serviceArea: "Toronto, the GTA & Durham Region",
 
-  // Optional: paste a Formspree (https://formspree.io) form URL here and the
-  // contact form will submit straight to your inbox. If left empty, the form
-  // opens the visitor's email app with their message filled in instead.
-  formEndpoint: "",
+  // Email alerts: every contact-form enquiry is emailed here (via the free
+  // FormSubmit service, https://formsubmit.co). A Formspree form URL also works.
+  // If left empty, the form opens the visitor's email app instead.
+  formEndpoint: "https://formsubmit.co/ajax/realtorgbh@gmail.com",
 
   // Home page background video. Put an .mp4 file (ideally 1920x1080, under
   // 15 MB, 10-30 seconds, no sound) in assets/video/ and write its path here.
