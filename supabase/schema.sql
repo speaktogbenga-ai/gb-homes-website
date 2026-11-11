@@ -20,10 +20,16 @@ create table if not exists public.leads (
 
 alter table public.leads enable row level security;
 
+-- Table privileges (needed when "Automatically expose new tables" is off).
+-- Row-level security below still decides which rows each role may touch.
+grant usage on schema public to anon, authenticated;
+revoke all on public.leads from anon, authenticated;
+grant insert (name, email, phone, topic, timeline, budget, message, listing_id, page) on public.leads to anon;
+
 -- Website visitors may ADD a lead, but never read, change or delete any.
 drop policy if exists "Visitors can submit a lead" on public.leads;
 create policy "Visitors can submit a lead" on public.leads
-  for insert to anon with check (status = 'new');
+  for insert to anon with check (true);  -- status always 'new': visitors can't write that column
 
 -- 2. Listings shown on the website ----------------------------------------
 create table if not exists public.listings (
@@ -51,6 +57,9 @@ create table if not exists public.listings (
 );
 
 alter table public.listings enable row level security;
+
+revoke all on public.listings from anon, authenticated;
+grant select on public.listings to anon, authenticated;
 
 drop policy if exists "Anyone can read published listings" on public.listings;
 create policy "Anyone can read published listings" on public.listings

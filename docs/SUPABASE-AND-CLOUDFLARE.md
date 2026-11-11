@@ -18,15 +18,15 @@ The website works without either service. Each one switches on when you fill in 
 2. When the project is ready, open **SQL Editor → New query**.
    - Paste the whole of [`supabase/schema.sql`](../supabase/schema.sql) and click **Run**.
    - This creates the **leads** and **listings** tables, adds the Pickering listing, creates a **listing-photos** storage bucket and sets the security rules.
-3. Go to **Project Settings → API** and copy two values:
+3. Go to **Project Settings → API Keys** and copy two values:
    - the **Project URL**
-   - the **anon public** key
+   - the **Publishable key** (`sb_publishable_…`), or the legacy **anon public** key
 4. Paste them into `js/config.js`:
    ```js
    supabaseUrl: "https://xxxxxxxx.supabase.co",
    supabaseAnonKey: "eyJhbGciOi...",
    ```
-   The anon key is designed to be public. The security rules only let visitors **add** a lead and **read** published listings. Never paste the **service_role** key into the site.
+   The publishable key is designed to be public. The security rules only let visitors **add** a lead and **read** published listings. Never paste a **secret** or **service_role** key into the site.
 
 ### Day to day
 - **New leads:** Table Editor → **leads**. Change `status` to `contacted`, `client` or `closed` as you go.
