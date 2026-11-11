@@ -24,8 +24,8 @@ window.GB_CONFIG = {
   // Home page background video. Put an .mp4 file (ideally 1920x1080, under
   // 15 MB, 10-30 seconds, no sound) in assets/video/ and write its path here.
   // Optional poster image shows while the video loads.
-  heroVideo: "",                          // e.g. "assets/video/hero.mp4"
-  heroPoster: "",                         // e.g. "assets/video/hero-poster.jpg"
+  heroVideo: "https://videos.pexels.com/video-files/40807458/17436299_1920_1080_30fps.mp4",                          // e.g. "assets/video/hero.mp4"
+  heroPoster: "https://images.pexels.com/videos/40807458/architectural-photography-contemporary-home-interior-design-luxury-interiors-40807458.jpeg?auto=compress&cs=tinysrgb&w=1920",                         // e.g. "assets/video/hero-poster.jpg"
 
   // Optional: a booking link (Calendly, Google Calendar booking page, etc.).
   bookingUrl: ""

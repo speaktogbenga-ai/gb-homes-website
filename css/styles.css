@@ -490,3 +490,20 @@ dialog.listing-dialog::backdrop { background: rgba(10, 10, 10, 0.6); }
 .hero--dark .hero-call a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 .hero--dark .quick-calc { color: var(--ink); border-color: transparent; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45); }
 @media (max-width: 900px) { .hero--dark { padding: 64px 0 72px; } }
+
+/* Photo backgrounds on inner-page headers (high-end homes, Pexels free licence) */
+.page-hero--photo { position: relative; color: #fff; background: #151517 center / cover no-repeat; border-bottom: 0; padding: 120px 0 88px; isolation: isolate; }
+.page-hero--photo::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10,10,12,.86) 0%, rgba(10,10,12,.62) 55%, rgba(10,10,12,.35) 100%), linear-gradient(0deg, rgba(10,10,12,.55), rgba(10,10,12,0) 45%); }
+.page-hero--photo h1, .page-hero--photo .lead { color: #fff; }
+.page-hero--photo .lead { opacity: .9; }
+.page-hero--photo .eyebrow { color: #ff6b6b; }
+.page-hero--photo a:not(.btn) { color: #fff; }
+.page-hero--listings { background-image: url("https://images.pexels.com/photos/8143668/pexels-photo-8143668.jpeg?auto=compress&cs=tinysrgb&w=1920"); }
+.page-hero--first-time-buyers { background-image: url("https://images.pexels.com/photos/7598368/pexels-photo-7598368.jpeg?auto=compress&cs=tinysrgb&w=1920"); }
+.page-hero--investors { background-image: url("https://images.pexels.com/photos/8134821/pexels-photo-8134821.jpeg?auto=compress&cs=tinysrgb&w=1920"); }
+.page-hero--mortgage-calculator { background-image: url("https://images.pexels.com/photos/31737859/pexels-photo-31737859.jpeg?auto=compress&cs=tinysrgb&w=1920"); }
+.page-hero--contact { background-image: url("https://images.pexels.com/photos/7031406/pexels-photo-7031406.jpeg?auto=compress&cs=tinysrgb&w=1920"); }
+@media (max-width: 640px) { .page-hero--photo { padding: 88px 0 64px; } .page-hero--photo::before { background: rgba(10,10,12,.7); } }
+.page-hero--photo .btn--ghost { color: #fff; }
+.page-hero--photo .btn--ghost:hover { background: #fff; border-color: #fff; color: var(--ink); }
+.page-hero--photo .seg { background: rgba(255,255,255,.94); border-color: transparent; }
