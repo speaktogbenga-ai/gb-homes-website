@@ -31,15 +31,15 @@ window.GB_CONFIG = {
   bookingUrl: "",
 
   // Supabase (database for leads and listings). From your Supabase project:
-  // Project Settings → API → "Project URL" and the "anon public" key.
-  // The anon key is safe to publish; NEVER paste the service_role key here.
+  // Project Settings → API Keys → the "Publishable key" (or legacy "anon public" key).
+  // The publishable key is safe to publish; NEVER paste a secret / service_role key here.
   // Run supabase/schema.sql once in the Supabase SQL Editor first.
-  supabaseUrl: "",                        // e.g. "https://abcdefghijkl.supabase.co"
-  supabaseAnonKey: "",
+  supabaseUrl: "https://oskldlkbrmdfuerbeikr.supabase.co",
+  supabaseAnonKey: "sb_publishable_c0PQ4nbUKiupUq3Uf8DvaQ_4DyCLwx8",   // publishable key (safe to publish)
 
   // Cloudflare Web Analytics (free, no cookies). Cloudflare dashboard →
   // Analytics & Logs → Web Analytics → Add a site → copy the token from the
   // snippet (the value after "token":). Not needed if your domain's DNS is on
   // Cloudflare with automatic setup turned on.
-  cloudflareAnalyticsToken: ""
+  cloudflareAnalyticsToken: "ca81f14b64aa4bf689d490418fbb843b"
 };
