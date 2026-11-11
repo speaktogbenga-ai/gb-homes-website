@@ -51,3 +51,7 @@ The Pickering semi-detached listing is already in there; add its price, address,
 - Ontario land transfer tax and Toronto MLTT (including luxury tiers) with first-time buyer refunds of up to $4,000 and $4,475.
 
 The maths lives in `js/finance.js` if any of these rules change.
+
+## Supabase and Cloudflare
+
+Leads, editable listings, faster delivery and analytics are optional. See [docs/SUPABASE-AND-CLOUDFLARE.md](docs/SUPABASE-AND-CLOUDFLARE.md).

@@ -28,5 +28,18 @@ window.GB_CONFIG = {
   heroPoster: "https://images.pexels.com/videos/40807458/architectural-photography-contemporary-home-interior-design-luxury-interiors-40807458.jpeg?auto=compress&cs=tinysrgb&w=1920",                         // e.g. "assets/video/hero-poster.jpg"
 
   // Optional: a booking link (Calendly, Google Calendar booking page, etc.).
-  bookingUrl: ""
+  bookingUrl: "",
+
+  // Supabase (database for leads and listings). From your Supabase project:
+  // Project Settings → API → "Project URL" and the "anon public" key.
+  // The anon key is safe to publish; NEVER paste the service_role key here.
+  // Run supabase/schema.sql once in the Supabase SQL Editor first.
+  supabaseUrl: "",                        // e.g. "https://abcdefghijkl.supabase.co"
+  supabaseAnonKey: "",
+
+  // Cloudflare Web Analytics (free, no cookies). Cloudflare dashboard →
+  // Analytics & Logs → Web Analytics → Add a site → copy the token from the
+  // snippet (the value after "token":). Not needed if your domain's DNS is on
+  // Cloudflare with automatic setup turned on.
+  cloudflareAnalyticsToken: ""
 };
