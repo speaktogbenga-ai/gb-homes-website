@@ -18,9 +18,10 @@
   }
   function priceText(l) { return l.price ? F.money(l.price) : "Contact for price"; }
   function place(l) { return [l.address, l.city, l.province].filter(Boolean).join(", "); }
+  function photoUrl(p) { return /^https?:\/\//.test(p) ? p : "assets/listings/" + p; }
   function cover(l) {
     if (l.photos && l.photos.length) {
-      return '<img src="assets/listings/' + esc(l.photos[0]) + '" alt="' + esc(l.title + " in " + l.city) + '" loading="lazy">';
+      return '<img src="' + esc(photoUrl(l.photos[0])) + '" alt="' + esc(l.title + " in " + l.city) + '" loading="lazy">';
     }
     return '<img src="assets/listings/placeholder.svg" alt="" loading="lazy">';
   }
@@ -127,42 +128,74 @@
 
   // ----- Listings page -----
   var grid = document.getElementById("listings-grid");
-  if (grid) {
-    var fCity = document.getElementById("f-city");
-    var fType = document.getElementById("f-type");
-    var fBeds = document.getElementById("f-beds");
-    var fStatus = document.getElementById("f-status");
-    var count = document.getElementById("listings-count");
+  var featured = document.getElementById("featured-listings");
+  var filtersWired = false;
 
-    function uniq(key) {
-      return LISTINGS.map(function (l) { return l[key]; }).filter(function (v, i, a) { return v && a.indexOf(v) === i; }).sort();
-    }
-    uniq("city").forEach(function (c) { fCity.insertAdjacentHTML("beforeend", "<option>" + esc(c) + "</option>"); });
-    uniq("type").forEach(function (c) { fType.insertAdjacentHTML("beforeend", "<option>" + esc(c) + "</option>"); });
-
-    function apply() {
-      var list = LISTINGS.filter(function (l) {
-        if (fCity.value && l.city !== fCity.value) return false;
-        if (fType.value && l.type !== fType.value) return false;
-        if (fBeds.value && (l.beds || 0) < +fBeds.value) return false;
-        if (fStatus.value === "available" && /sold|leased/i.test(l.status)) return false;
-        if (fStatus.value === "sold" && !/sold|leased/i.test(l.status)) return false;
-        return true;
-      });
-      count.textContent = list.length === 1 ? "1 home" : list.length + " homes";
-      render(grid, list, true);
-    }
-    [fCity, fType, fBeds, fStatus].forEach(function (el) { el.addEventListener("change", apply); });
-    apply();
-
-    var hash = location.hash.slice(1);
-    if (hash) openDetail(hash);
+  function uniq(key) {
+    return LISTINGS.map(function (l) { return l[key]; }).filter(function (v, i, a) { return v && a.indexOf(v) === i; }).sort();
+  }
+  function fillOptions(sel, values) {
+    var keep = sel.value;
+    while (sel.options.length > 1) sel.remove(1);
+    values.forEach(function (c) { sel.insertAdjacentHTML("beforeend", "<option>" + esc(c) + "</option>"); });
+    if (values.indexOf(keep) !== -1) sel.value = keep;
   }
 
-  // ----- Home page featured -----
-  var featured = document.getElementById("featured-listings");
-  if (featured) {
-    var feat = LISTINGS.filter(function (l) { return l.featured; }).slice(0, 2);
-    render(featured, feat, true);
+  function renderAll() {
+    if (grid) {
+      var fCity = document.getElementById("f-city");
+      var fType = document.getElementById("f-type");
+      var fBeds = document.getElementById("f-beds");
+      var fStatus = document.getElementById("f-status");
+      var count = document.getElementById("listings-count");
+      fillOptions(fCity, uniq("city"));
+      fillOptions(fType, uniq("type"));
+      var apply = function () {
+        var list = LISTINGS.filter(function (l) {
+          if (fCity.value && l.city !== fCity.value) return false;
+          if (fType.value && l.type !== fType.value) return false;
+          if (fBeds.value && (l.beds || 0) < +fBeds.value) return false;
+          if (fStatus.value === "available" && /sold|leased/i.test(l.status)) return false;
+          if (fStatus.value === "sold" && !/sold|leased/i.test(l.status)) return false;
+          return true;
+        });
+        count.textContent = list.length === 1 ? "1 home" : list.length + " homes";
+        render(grid, list, true);
+      };
+      if (!filtersWired) {
+        [fCity, fType, fBeds, fStatus].forEach(function (el) { el.addEventListener("change", function () { apply(); }); });
+        filtersWired = true;
+      }
+      grid._apply = apply;
+      apply();
+    }
+    if (featured) {
+      render(featured, LISTINGS.filter(function (l) { return l.featured; }).slice(0, 2), true);
+    }
+  }
+
+  renderAll();
+  var hash = grid && location.hash.slice(1);
+  var opened = false;
+  if (hash && LISTINGS.some(function (l) { return l.id === hash; })) { openDetail(hash); opened = true; }
+
+  // ----- Supabase: replace the built-in list with the "listings" table -----
+  if (window.GBDB && window.GBDB.enabled && (grid || featured)) {
+    window.GBDB.select("listings", "published=eq.true&order=sort_order.asc,updated_at.desc").then(function (rows) {
+      if (!rows || !rows.length) return; // empty table: keep the built-in list
+      LISTINGS = rows.map(function (r) {
+        return {
+          id: r.id, status: r.status, type: r.type, title: r.title, address: r.address || "",
+          city: r.city, province: r.province || "ON", price: r.price == null ? null : +r.price,
+          beds: r.beds, baths: r.baths, parking: r.parking, sqft: r.sqft || "", mlsNumber: r.mls_number || "",
+          photos: r.photos || [], featured: !!r.featured, goodFor: r.good_for || [],
+          summary: r.summary || "", highlights: r.highlights || []
+        };
+      });
+      window.GB_LISTINGS = LISTINGS;
+      renderAll();
+      if (hash && !opened && LISTINGS.some(function (l) { return l.id === hash; })) openDetail(hash);
+      document.dispatchEvent(new CustomEvent("gb:listings", { detail: LISTINGS }));
+    }).catch(function (e) { if (window.console) console.warn("Listings: using built-in list.", e); });
   }
 })();

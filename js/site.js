@@ -61,6 +61,15 @@
     }
   }
 
+  // Cloudflare Web Analytics (privacy-friendly, no cookies)
+  if (cfg.cloudflareAnalyticsToken && !document.querySelector("script[data-cf-beacon]")) {
+    var cf = document.createElement("script");
+    cf.defer = true;
+    cf.src = "https://static.cloudflareinsights.com/beacon.min.js";
+    cf.setAttribute("data-cf-beacon", JSON.stringify({ token: cfg.cloudflareAnalyticsToken }));
+    document.head.appendChild(cf);
+  }
+
   // Footer year
   document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
