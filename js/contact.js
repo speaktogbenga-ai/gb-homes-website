@@ -1,7 +1,7 @@
 /* GB Homes — contact form.
    If Supabase is set up (GB_CONFIG.supabaseUrl + supabaseAnonKey), each enquiry
    is saved to the "leads" table first.
-   If GB_CONFIG.formEndpoint is set (e.g. a Formspree URL), the form posts there.
+   If GB_CONFIG.formEndpoint is set (FormSubmit or Formspree URL), each enquiry is also emailed.
    Otherwise it opens the visitor's email app addressed to GB_CONFIG.email. */
 (function () {
   "use strict";
@@ -50,6 +50,22 @@
       "\nBudget: " + (data.get("budget") || "") + "\n\n" + (data.get("message") || "");
 
     var btn = form.querySelector('button[type="submit"]');
+    // Email alert payload (works with FormSubmit and Formspree).
+    function emailData() {
+      var d = new FormData(form);
+      d.delete("_gotcha");
+      d.delete("consent");
+      d.set("topic", topicLabel);
+      if (q.get("listing")) d.set("listing", q.get("listing"));
+      d.set("_subject", "New website enquiry: " + topicLabel + " from " + name);
+      d.set("_replyto", email);
+      d.set("_template", "table");
+      d.set("_captcha", "false");
+      return d;
+    }
+    function sendEmail() {
+      return fetch(cfg.formEndpoint, { method: "POST", body: emailData(), headers: { Accept: "application/json" } });
+    }
     var thanks = "<strong>Thanks, " + name.split(" ")[0] + "!</strong> Your message is on its way. I’ll be in touch within one business day.";
 
     // 1) Supabase: save the lead to your database (see supabase/schema.sql).
@@ -66,7 +82,7 @@
         page: location.pathname + location.search
       }).then(function () {
         // Also send the email notification if a Formspree link is set.
-        if (cfg.formEndpoint) fetch(cfg.formEndpoint, { method: "POST", body: data, headers: { Accept: "application/json" } }).catch(function () {});
+        if (cfg.formEndpoint) sendEmail().catch(function () {});
         form.reset();
         show("ok", thanks);
       }).catch(function () {
@@ -79,7 +95,7 @@
 
     if (cfg.formEndpoint) {
       btn.disabled = true;
-      fetch(cfg.formEndpoint, { method: "POST", body: data, headers: { Accept: "application/json" } })
+      sendEmail()
         .then(function (r) {
           if (!r.ok) throw new Error("bad status");
           form.reset();
