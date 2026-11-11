@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Photos coming soon">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f5f2"/><stop offset="1" stop-color="#ece8e2"/></linearGradient></defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <g fill="none" stroke="#d3cdc4" stroke-width="10" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M250 330 L400 215 L550 330"/>
+    <path d="M285 305 V420 H515 V305"/>
+    <path d="M375 420 V355 H425 V420"/>
+  </g>
+  <g fill="#e52020"><rect x="388" y="270" width="10" height="10"/><rect x="402" y="270" width="10" height="10"/><rect x="388" y="284" width="10" height="10"/><rect x="402" y="284" width="10" height="10"/></g>
+  <text x="400" y="480" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-size="24" font-weight="700" fill="#9b948a" letter-spacing="3">PHOTOS COMING SOON</text>
+</svg>

@@ -1,0 +1,32 @@
+/* ==========================================================================
+   GB Homes — business details
+   --------------------------------------------------------------------------
+   Edit this one file to update your contact details everywhere on the site.
+   Anything left as "" (empty) is hidden, except the brokerage name and your
+   registered title, which show a yellow reminder until you fill them in
+   (RECO requires the brokerage name on your advertising).
+   ========================================================================== */
+window.GB_CONFIG = {
+  agentName: "Gbenga",                    // e.g. "Oluwagbemiga (Gbenga) …"
+  registeredTitle: "REALTOR®",             // e.g. "Sales Representative" or "Broker"
+  brokerageName: "Real City Realty",      // e.g. "XYZ Realty Inc., Brokerage" exactly as registered
+  brokerageAddress: "",                   // optional
+  phone: "(437) 235-2788",                //  e.g. "(416) 555-0123"
+  email: "realtorgbh@gmail.com",          //  e.g. "hello@gbhomes.ca"
+  instagram: "realtorgbhome",             // handle without the @
+  serviceArea: "Toronto, the GTA & Durham Region",
+
+  // Optional: paste a Formspree (https://formspree.io) form URL here and the
+  // contact form will submit straight to your inbox. If left empty, the form
+  // opens the visitor's email app with their message filled in instead.
+  formEndpoint: "",
+
+  // Home page background video. Put an .mp4 file (ideally 1920x1080, under
+  // 15 MB, 10-30 seconds, no sound) in assets/video/ and write its path here.
+  // Optional poster image shows while the video loads.
+  heroVideo: "",                          // e.g. "assets/video/hero.mp4"
+  heroPoster: "",                         // e.g. "assets/video/hero-poster.jpg"
+
+  // Optional: a booking link (Calendly, Google Calendar booking page, etc.).
+  bookingUrl: ""
+};

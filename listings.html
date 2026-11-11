@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en-CA" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listings | GB Homes Real Estate</title>
+<meta name="description" content="Homes for sale with GB Homes Real Estate in Pickering, Durham Region, Toronto and the GTA. Book a showing or get new listing alerts.">
+<meta property="og:title" content="Listings | GB Homes Real Estate">
+<meta property="og:description" content="Homes for sale with GB Homes Real Estate in Pickering, Durham Region, Toronto and the GTA. Book a showing or get new listing alerts.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#E52020">
+<link rel="icon" href="assets/brand/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="GB Homes Real Estate, home"><img src="assets/brand/logo-horizontal.svg" alt="GB Homes Real Estate" width="215" height="38"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a><a href="listings.html" aria-current="page">Listings</a><a href="first-time-buyers.html">First-time buyers</a><a href="investors.html">Investors</a><a href="mortgage-calculator.html">Mortgage calculator</a>
+      <a class="btn btn--red" href="contact.html">Book a free call</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Listings</span>
+    <h1>Homes for sale</h1>
+    <p class="lead">Current GB Homes listings across the GTA and Durham Region. See something you like? Book a showing and I’ll walk you through it, numbers included.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <form class="filters" onsubmit="return false" aria-label="Filter listings">
+      <div class="field">
+        <label for="f-city">City</label>
+        <select class="input" id="f-city"><option value="">All cities</option></select>
+      </div>
+      <div class="field">
+        <label for="f-type">Home type</label>
+        <select class="input" id="f-type"><option value="">All types</option></select>
+      </div>
+      <div class="field">
+        <label for="f-beds">Bedrooms</label>
+        <select class="input" id="f-beds">
+          <option value="">Any</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-status">Status</label>
+        <select class="input" id="f-status">
+          <option value="available">Available</option>
+          <option value="">All</option>
+          <option value="sold">Sold</option>
+        </select>
+      </div>
+    </form>
+    <p class="muted small" aria-live="polite"><span id="listings-count"></span></p>
+    <div class="grid grid-3" id="listings-grid"></div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="wrap grid grid-2" style="align-items:center">
+    <div>
+      <span class="eyebrow">Not seeing the right fit?</span>
+      <h2>I’ll find it for you.</h2>
+      <p class="lead">Many of the best homes sell fast or never hit the big portals. Tell me your must-haves and budget, and I’ll send you matching homes the moment they come up.</p>
+    </div>
+    <div class="btn-row" style="justify-content:flex-end">
+      <a class="btn btn--red" href="contact.html?topic=alerts">Get listing alerts</a>
+      <a class="btn btn--ghost" href="mortgage-calculator.html#afford">See what I can afford</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="assets/brand/logo-horizontal-white.svg" alt="GB Homes Real Estate" width="250" height="44">
+        <p>Helping first-time buyers and investors across <span data-config="serviceArea">Toronto, the GTA &amp; Durham Region</span> buy with confidence.</p>
+        <p class="small"><span data-config="agentName">Gbenga</span>, <span data-config="registeredTitle"></span><br><span data-config="brokerageName"></span><span data-config-wrap><br><span data-config="brokerageAddress"></span></span></p>
+      </div>
+      <div>
+        <h4>Buy</h4>
+        <ul>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="first-time-buyers.html">First-time buyer guide</a></li>
+          <li><a href="investors.html">Investor guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="mortgage-calculator.html">Mortgage payment</a></li>
+          <li><a href="mortgage-calculator.html#afford">Affordability</a></li>
+          <li><a href="mortgage-calculator.html#closing">Land transfer tax</a></li>
+          <li><a href="investors.html#calculator">Rental cash flow</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li data-config-wrap><a data-config-href="phone" href="#"><span data-config="phone"></span></a></li>
+          <li data-config-wrap><a data-config-href="email" href="#"><span data-config="email"></span></a></li>
+          <li data-config-wrap><a data-config-href="instagram" href="#" rel="noopener"><span data-config="instagram"></span></a></li>
+          <li><a href="contact.html">Send a message</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> GB Homes Real Estate. All rights reserved.</span>
+      <span>Not intended to solicit buyers or sellers currently under contract. Calculators are estimates only.</span>
+    </div>
+  </div>
+</footer>
+<script src="js/config.js"></script>
+<script src="js/site.js"></script>
+<script src="js/finance.js"></script>
+<script src="js/listings-data.js"></script>
+<script src="js/listings.js"></script>
+</body>
+</html>

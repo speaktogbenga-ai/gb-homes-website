@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en-CA" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GB Homes Real Estate | First homes & investment properties in the GTA</title>
+<meta name="description" content="GB Homes helps first-time buyers and investors across Toronto, the GTA and Durham Region buy with confidence. Listings, a Canadian mortgage calculator and free buyer guides.">
+<meta property="og:title" content="GB Homes Real Estate | First homes & investment properties in the GTA">
+<meta property="og:description" content="GB Homes helps first-time buyers and investors across Toronto, the GTA and Durham Region buy with confidence. Listings, a Canadian mortgage calculator and free buyer guides.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#E52020">
+<link rel="icon" href="assets/brand/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="GB Homes Real Estate, home"><img src="assets/brand/logo-horizontal.svg" alt="GB Homes Real Estate" width="215" height="38"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a><a href="listings.html">Listings</a><a href="first-time-buyers.html">First-time buyers</a><a href="investors.html">Investors</a><a href="mortgage-calculator.html">Mortgage calculator</a>
+      <a class="btn btn--red" href="contact.html">Book a free call</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero hero--dark">
+  <div class="hero-media" aria-hidden="true">
+    <video id="hero-video" muted loop playsinline preload="metadata"></video>
+  </div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">GB Homes Real Estate · Toronto, GTA &amp; Durham</span>
+      <h1>Your first home. Your next investment. <span class="red">Let’s get you there.</span></h1>
+      <p class="lead">I help first-time buyers get the keys without the stress, and help investors find properties where the numbers actually work. Clear advice, honest numbers, and someone in your corner from the first call to closing day.</p>
+      <div class="btn-row">
+        <a class="btn btn--red" href="contact.html">Book a free consultation</a>
+        <a class="btn btn--ghost" href="listings.html">See listings</a>
+      </div>
+      <ul class="hero-points">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> First-time buyer specialist</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Investor-focused analysis</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> No-pressure advice</li>
+      </ul>
+      <p class="hero-call" data-config-wrap>Call or text <a data-config-href="phone" href="#"><span data-config="phone"></span></a></p>
+    </div>
+
+    <form class="quick-calc" id="quick-calc" aria-labelledby="qc-title" onsubmit="return false">
+      <h2 id="qc-title">What would my payment be?</h2>
+      <p class="muted small">A quick estimate. Drag the sliders.</p>
+      <div class="field">
+        <label for="qc-price">Home price <output id="qc-price-out"></output></label>
+        <input type="range" id="qc-price" min="300000" max="2000000" step="5000" value="750000">
+      </div>
+      <div class="field">
+        <label for="qc-down">Down payment <output id="qc-down-out"></output></label>
+        <input type="range" id="qc-down" min="5" max="50" step="1" value="10">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="qc-rate">Rate</label>
+          <div class="input-affix suffix"><input class="input" id="qc-rate" inputmode="decimal" value="4.29"><span class="affix">%</span></div>
+        </div>
+        <div class="field">
+          <label for="qc-amort">Amortization</label>
+          <select class="input" id="qc-amort">
+            <option value="25">25 years</option>
+            <option value="30" selected>30 years</option>
+          </select>
+        </div>
+      </div>
+      <div class="result-big"><span id="qc-pay">—</span> <small>/ month</small></div>
+      <p class="muted small" id="qc-note"></p>
+      <a class="link-arrow" href="mortgage-calculator.html" id="qc-more">Full calculator with closing costs</a>
+    </form>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">How I help</span>
+        <h2>Whatever you’re buying for, start here.</h2>
+      </div>
+    </div>
+    <div class="grid grid-3">
+      <article class="card service-card reveal">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></div>
+        <h3>First-time buyers</h3>
+        <p>From your first budget to your first set of keys. I’ll show you every program you qualify for (FHSA, RRSP Home Buyers’ Plan, land transfer tax refunds) and walk you through each step so nothing catches you off guard.</p>
+        <a class="link-arrow" href="first-time-buyers.html">Read the first-time buyer guide</a>
+      </article>
+      <article class="card service-card reveal">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg></div>
+        <h3>Investors</h3>
+        <p>Rentals, house hacks, legal second units and pre-construction. I run the cash flow, cap rate and financing before you make an offer, so you buy on numbers, not hope.</p>
+        <a class="link-arrow" href="investors.html">Read the investor guide</a>
+      </article>
+      <article class="card service-card reveal">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
+        <h3>Sellers</h3>
+        <p>Thinking of selling to move up or free up equity for your next property? I’ll price it right, market it well, and help you plan the buy and the sale together.</p>
+        <a class="link-arrow" href="contact.html">Ask for a home value estimate</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Listings</span>
+        <h2>Featured homes</h2>
+      </div>
+      <a class="btn btn--ghost btn--sm" href="listings.html">All listings</a>
+    </div>
+    <div class="grid grid-3" id="featured-listings"></div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">The process</span>
+      <h2>Four steps from “just looking” to “welcome home”</h2>
+      <p class="lead">Buying is a big decision. Here is exactly what working together looks like.</p>
+    </div>
+    <div class="steps" style="margin-top:48px">
+      <div class="step reveal">
+        <h3>Free strategy call</h3>
+        <p class="muted">We talk about your goals, timeline and budget, and whether you’re buying to live in, to rent out, or both.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Get pre-approved</h3>
+        <p class="muted">I connect you with trusted mortgage professionals so you know your real number before you fall in love with a house.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Find the right home</h3>
+        <p class="muted">Tours, comparable sales and honest feedback, including when to walk away. Investors get a full numbers breakdown.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Offer to keys</h3>
+        <p class="muted">I negotiate on your behalf, guide you through conditions and closing, and stay on call after you move in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Free tools</span>
+        <h2>Run your numbers before you call anyone</h2>
+      </div>
+    </div>
+    <div class="grid grid-3">
+      <a class="card service-card reveal" href="mortgage-calculator.html" style="text-decoration:none">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h4"/></svg></div>
+        <h3>Mortgage calculator</h3>
+        <p class="muted">Canadian semi-annual compounding, CMHC insurance and every payment frequency.</p>
+        <span class="link-arrow">Calculate payment</span>
+      </a>
+      <a class="card service-card reveal" href="mortgage-calculator.html#afford" style="text-decoration:none">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h3>How much can I afford?</h3>
+        <p class="muted">See your maximum price under the federal stress test, using your income and debts.</p>
+        <span class="link-arrow">Check affordability</span>
+      </a>
+      <a class="card service-card reveal" href="investors.html#calculator" style="text-decoration:none">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg></div>
+        <h3>Rental cash flow</h3>
+        <p class="muted">Cap rate, monthly cash flow and cash-on-cash return for any rental property.</p>
+        <span class="link-arrow">Analyze a rental</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap about">
+    <figure class="about-photo reveal"><img src="assets/photos/gbenga.jpg" alt="Gbenga of GB Homes Real Estate, smiling, in a beige blazer" width="960" height="1200" loading="lazy"></figure>
+    <div class="reveal">
+      <span class="eyebrow">About GB Homes</span>
+      <h2>Hi, I’m <span data-config="agentName">Gbenga</span>.</h2>
+      <p class="lead">I started GB Homes because buying your first home, or your first investment property, should feel exciting, not overwhelming.</p>
+      <p>Most of my clients are doing this for the first time, or are building long-term wealth one property at a time. I take the time to explain every step, show you the real numbers, and give you straight answers, even when the answer is “not this one.”</p>
+      <p>I work across <span data-config="serviceArea">Toronto, the GTA &amp; Durham Region</span>, including Pickering, Ajax, Whitby, Oshawa and Scarborough.</p>
+      <div class="btn-row" style="margin-top:24px">
+        <a class="btn btn--ink" href="contact.html">Let’s talk</a>
+        <a class="btn btn--ghost" data-config-href="instagram" href="#" rel="noopener">Follow on Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Ready when you are.</h2>
+        <p>Book a free, no-pressure call. Bring your questions; I’ll bring the numbers.</p>
+      </div>
+      <a class="btn btn--ink" href="contact.html">Book a free consultation</a>
+    </div>
+  </div>
+</section>
+<div style="height:72px"></div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="assets/brand/logo-horizontal-white.svg" alt="GB Homes Real Estate" width="250" height="44">
+        <p>Helping first-time buyers and investors across <span data-config="serviceArea">Toronto, the GTA &amp; Durham Region</span> buy with confidence.</p>
+        <p class="small"><span data-config="agentName">Gbenga</span>, <span data-config="registeredTitle"></span><br><span data-config="brokerageName"></span><span data-config-wrap><br><span data-config="brokerageAddress"></span></span></p>
+      </div>
+      <div>
+        <h4>Buy</h4>
+        <ul>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="first-time-buyers.html">First-time buyer guide</a></li>
+          <li><a href="investors.html">Investor guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="mortgage-calculator.html">Mortgage payment</a></li>
+          <li><a href="mortgage-calculator.html#afford">Affordability</a></li>
+          <li><a href="mortgage-calculator.html#closing">Land transfer tax</a></li>
+          <li><a href="investors.html#calculator">Rental cash flow</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li data-config-wrap><a data-config-href="phone" href="#"><span data-config="phone"></span></a></li>
+          <li data-config-wrap><a data-config-href="email" href="#"><span data-config="email"></span></a></li>
+          <li data-config-wrap><a data-config-href="instagram" href="#" rel="noopener"><span data-config="instagram"></span></a></li>
+          <li><a href="contact.html">Send a message</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> GB Homes Real Estate. All rights reserved.</span>
+      <span>Not intended to solicit buyers or sellers currently under contract. Calculators are estimates only.</span>
+    </div>
+  </div>
+</footer>
+<script src="js/config.js"></script>
+<script src="js/site.js"></script>
+<script src="js/finance.js"></script>
+<script src="js/listings-data.js"></script>
+<script src="js/listings.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
