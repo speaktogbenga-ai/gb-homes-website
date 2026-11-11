@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en-CA" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canadian Mortgage Calculator (Ontario) | GB Homes Real Estate</title>
+<meta name="description" content="Free Canadian mortgage calculator for Ontario buyers: monthly and bi-weekly payments, CMHC insurance, stress-test affordability, and Ontario and Toronto land transfer tax with first-time buyer rebates.">
+<meta property="og:title" content="Canadian Mortgage Calculator (Ontario) | GB Homes Real Estate">
+<meta property="og:description" content="Free Canadian mortgage calculator for Ontario buyers: monthly and bi-weekly payments, CMHC insurance, stress-test affordability, and Ontario and Toronto land transfer tax with first-time buyer rebates.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#E52020">
+<link rel="icon" href="assets/brand/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="GB Homes Real Estate, home"><img src="assets/brand/logo-horizontal.svg" alt="GB Homes Real Estate" width="215" height="38"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a><a href="listings.html">Listings</a><a href="first-time-buyers.html">First-time buyers</a><a href="investors.html">Investors</a><a href="mortgage-calculator.html" aria-current="page">Mortgage calculator</a>
+      <a class="btn btn--red" href="contact.html">Book a free call</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Free tools</span>
+    <h1>Canadian mortgage calculator</h1>
+    <p class="lead">Built for Ontario buyers. Uses Canadian semi-annual compounding, current CMHC insurance rules, the federal stress test, and Ontario and Toronto land transfer tax.</p>
+    <div class="seg" role="tablist" aria-label="Calculator" style="margin-top:28px">
+      <button type="button" role="tab" id="tab-payment" aria-controls="payment" aria-selected="true">Payment</button>
+      <button type="button" role="tab" id="tab-afford" aria-controls="afford" aria-selected="false">Affordability</button>
+      <button type="button" role="tab" id="tab-closing" aria-controls="closing" aria-selected="false">Closing costs</button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+
+    <!-- ============ PAYMENT ============ -->
+    <div role="tabpanel" id="payment" aria-labelledby="tab-payment">
+      <div class="calc">
+        <form class="card calc-panel" onsubmit="return false" aria-label="Mortgage details">
+          <div class="field">
+            <label for="p-price">Purchase price</label>
+            <div class="input-affix"><span class="affix">$</span><input class="input" id="p-price" inputmode="numeric" value="750,000"></div>
+          </div>
+          <div class="field">
+            <label for="p-down">Down payment <span class="hint" id="p-down-pct"></span></label>
+            <div class="input-affix"><span class="affix">$</span><input class="input" id="p-down" inputmode="numeric" value="75,000"></div>
+            <input type="range" id="p-down-range" min="5" max="50" step="0.5" value="10" aria-label="Down payment percent">
+            <span class="hint" id="p-down-min"></span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="p-rate">Interest rate</label>
+              <div class="input-affix suffix"><input class="input" id="p-rate" inputmode="decimal" value="4.29"><span class="affix">%</span></div>
+            </div>
+            <div class="field">
+              <label for="p-term">Term</label>
+              <select class="input" id="p-term">
+                <option value="1">1 year</option><option value="2">2 years</option><option value="3">3 years</option>
+                <option value="4">4 years</option><option value="5" selected>5 years</option><option value="7">7 years</option><option value="10">10 years</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="p-amort">Amortization</label>
+              <select class="input" id="p-amort">
+                <option value="15">15 years</option><option value="20">20 years</option>
+                <option value="25" selected>25 years</option><option value="30">30 years</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="p-freq">Payments</label>
+              <select class="input" id="p-freq"></select>
+            </div>
+          </div>
+          <label class="check"><input type="checkbox" id="p-ftb" checked> <span>I’m a first-time buyer, or buying a new build <span class="hint">(allows a 30-year insured mortgage)</span></span></label>
+        </form>
+
+        <div>
+          <div class="result-hero" aria-live="polite">
+            <div class="label" id="p-freq-label">Monthly payment</div>
+            <div class="value" id="p-payment">—</div>
+            <div class="sub" id="p-sub"></div>
+          </div>
+          <div id="p-notices"></div>
+          <div class="stats">
+            <div class="stat"><div class="label">Mortgage amount</div><div class="value" id="p-loan">—</div></div>
+            <div class="stat"><div class="label">CMHC insurance</div><div class="value" id="p-cmhc">—</div></div>
+            <div class="stat"><div class="label">Interest over the term</div><div class="value" id="p-term-int">—</div></div>
+            <div class="stat"><div class="label">Balance at renewal</div><div class="value" id="p-renew">—</div></div>
+            <div class="stat"><div class="label">Total interest (full amortization)</div><div class="value" id="p-total-int">—</div></div>
+            <div class="stat"><div class="label">Mortgage-free in</div><div class="value" id="p-payoff">—</div></div>
+          </div>
+
+          <div class="card card--flat" style="margin-bottom:20px">
+            <h3 style="margin-bottom:4px">Where your money goes</h3>
+            <p class="muted small" style="margin:0">Over the full amortization</p>
+            <div class="bar-split" aria-hidden="true"><div id="p-bar-prin" style="background:var(--ink)"></div><div id="p-bar-int" style="background:var(--red)"></div></div>
+            <div class="chart-legend"><span><i style="background:var(--ink)"></i>Principal <strong id="p-leg-prin"></strong></span><span><i style="background:var(--red)"></i>Interest <strong id="p-leg-int"></strong></span></div>
+            <h3 style="margin:28px 0 8px">Mortgage balance over time</h3>
+            <svg class="chart" id="p-chart" viewBox="0 0 640 220" role="img" aria-label="Mortgage balance by year"></svg>
+          </div>
+
+          <details class="disclosure">
+            <summary>Year-by-year schedule</summary>
+            <div class="disclosure-body table-scroll">
+              <table class="amort-table">
+                <thead><tr><th>Year</th><th>Principal paid</th><th>Interest paid</th><th>Balance</th></tr></thead>
+                <tbody id="p-table"></tbody>
+              </table>
+              <p class="muted small" style="margin-top:10px">Highlighted row = end of your term, when you renew.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ AFFORDABILITY ============ -->
+    <div role="tabpanel" id="afford" aria-labelledby="tab-afford" hidden>
+      <div class="calc">
+        <form class="card calc-panel" onsubmit="return false" aria-label="Your finances">
+          <div class="field">
+            <label for="a-income">Household income (before tax, yearly)</label>
+            <div class="input-affix"><span class="affix">$</span><input class="input" id="a-income" inputmode="numeric" value="130,000"></div>
+          </div>
+          <div class="field">
+            <label for="a-down">Down payment saved</label>
+            <div class="input-affix"><span class="affix">$</span><input class="input" id="a-down" inputmode="numeric" value="60,000"></div>
+          </div>
+          <div class="field">
+            <label for="a-debts">Monthly debt payments <span class="hint">car, student loan, credit cards</span></label>
+            <div class="input-affix"><span class="affix">$</span><input class="input" id="a-debts" inputmode="numeric" value="400"></div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="a-rate">Interest rate</label>
+              <div class="input-affix suffix"><input class="input" id="a-rate" inputmode="decimal" value="4.29"><span class="affix">%</span></div>
+            </div>
+            <div class="field">
+              <label for="a-amort">Amortization</label>
+              <select class="input" id="a-amort"><option value="25">25 years</option><option value="30" selected>30 years</option></select>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="a-tax">Property tax <span class="hint">% of price / yr</span></label>
+              <div class="input-affix suffix"><input class="input" id="a-tax" inputmode="decimal" value="0.95"><span class="affix">%</span></div>
+            </div>
+            <div class="field">
+              <label for="a-heat">Heating / month</label>
+              <div class="input-affix"><span class="affix">$</span><input class="input" id="a-heat" inputmode="numeric" value="120"></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="a-condo">Condo fees / month <span class="hint">0 if not a condo</span></label>
+            <div class="input-affix"><span class="affix">$</span><input class="input" id="a-condo" inputmode="numeric" value="0"></div>
+          </div>
+          <label class="check"><input type="checkbox" id="a-ftb" checked> I’m a first-time buyer</label>
+        </form>
+
+        <div>
+          <div class="result-hero" aria-live="polite">
+            <div class="label">You could afford a home up to about</div>
+            <div class="value" id="a-max">—</div>
+            <div class="sub" id="a-sub"></div>
+          </div>
+          <div id="a-notices"></div>
+          <div class="stats">
+            <div class="stat"><div class="label">Mortgage amount</div><div class="value" id="a-loan">—</div></div>
+            <div class="stat"><div class="label">Monthly payment</div><div class="value" id="a-pay">—</div></div>
+            <div class="stat"><div class="label">Stress-test rate</div><div class="value" id="a-qrate">—</div></div>
+            <div class="stat" id="a-gds-box"><div class="label">GDS ratio (max 39%)</div><div class="value" id="a-gds">—</div></div>
+            <div class="stat" id="a-tds-box"><div class="label">TDS ratio (max 44%)</div><div class="value" id="a-tds">—</div></div>
+          </div>
+          <div class="card card--flat">
+            <h3>How lenders decide</h3>
+            <p>Every federally regulated lender has to “stress test” you at the higher of <strong>your rate + 2%</strong> or <strong>5.25%</strong>. At that test rate:</p>
+            <ul>
+              <li><strong>GDS</strong> (mortgage, property tax, heat and half of condo fees) should be no more than <strong>39%</strong> of your gross income.</li>
+              <li><strong>TDS</strong> (all of the above plus your other debts) should be no more than <strong>44%</strong>.</li>
+            </ul>
+            <p class="muted small" style="margin:0">This is an estimate. Your actual approval depends on your credit, employment and the lender. A pre-approval gives you the real number, and I can connect you with a mortgage professional.</p>
+            <div class="btn-row" style="margin-top:18px">
+              <a class="btn btn--red btn--sm" href="contact.html?topic=preapproval">Get help with pre-approval</a>
+              <button class="btn btn--ghost btn--sm" type="button" id="a-to-payment">Use this price in the payment calculator</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CLOSING COSTS ============ -->
+    <div role="tabpanel" id="closing" aria-labelledby="tab-closing" hidden>
+      <div class="calc">
+        <form class="card calc-panel" onsubmit="return false" aria-label="Closing cost details">
+          <div class="field">
+            <label for="c-price">Purchase price</label>
+            <div class="input-affix"><span class="affix">$</span><input class="input" id="c-price" inputmode="numeric" value="750,000"></div>
+          </div>
+          <div class="field">
+            <label for="c-down">Down payment</label>
+            <div class="input-affix"><span class="affix">$</span><input class="input" id="c-down" inputmode="numeric" value="75,000"></div>
+          </div>
+          <label class="check"><input type="checkbox" id="c-ftb" checked> <span>First-time buyer <span class="hint">(land transfer tax refund)</span></span></label>
+          <label class="check"><input type="checkbox" id="c-toronto"> <span>The home is in the City of Toronto <span class="hint">(adds municipal land transfer tax)</span></span></label>
+          <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+          <p class="small muted" style="margin-top:0">Typical other costs. Change them if you have quotes.</p>
+          <div class="field-row">
+            <div class="field"><label for="c-legal">Lawyer &amp; disbursements</label><div class="input-affix"><span class="affix">$</span><input class="input" id="c-legal" inputmode="numeric" value="2,000"></div></div>
+            <div class="field"><label for="c-title">Title insurance</label><div class="input-affix"><span class="affix">$</span><input class="input" id="c-title" inputmode="numeric" value="350"></div></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="c-inspect">Home inspection</label><div class="input-affix"><span class="affix">$</span><input class="input" id="c-inspect" inputmode="numeric" value="550"></div></div>
+            <div class="field"><label for="c-adjust">Adjustments &amp; misc.</label><div class="input-affix"><span class="affix">$</span><input class="input" id="c-adjust" inputmode="numeric" value="750"></div></div>
+          </div>
+        </form>
+
+        <div>
+          <div class="result-hero" aria-live="polite">
+            <div class="label">Cash you’ll need on closing day</div>
+            <div class="value" id="c-cash">—</div>
+            <div class="sub" id="c-sub"></div>
+          </div>
+          <div class="card card--flat">
+            <h3>Closing cost breakdown</h3>
+            <table class="breakdown"><tbody id="c-table"></tbody></table>
+            <div class="callout small">
+              <p><strong>Tip:</strong> Plan for closing costs of about 1.5% to 4% of the price on top of your down payment. Lenders usually want to see that money in your account before they approve you.</p>
+            </div>
+            <p class="muted small" style="margin:0">Ontario land transfer tax and Toronto MLTT rates and first-time buyer refunds (up to $4,000 Ontario and $4,475 Toronto) as of November 2026. Your lawyer will confirm the exact amounts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="muted small" style="margin-top:40px;max-width:820px">These calculators give estimates for planning only and are not a mortgage approval or financial advice. Payments assume a fixed rate compounded semi-annually, as Canadian law requires for fixed-rate mortgages. CMHC premiums are 2.80% to 4.00% of the mortgage depending on your down payment, plus 0.20% for a 30-year insured amortization; Ontario charges 8% PST on the premium at closing.</p>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Want me to run the numbers with you?</h2>
+        <p>I’ll walk you through your budget, programs you qualify for and what to expect on closing day.</p>
+      </div>
+      <a class="btn btn--ink" href="contact.html">Book a free call</a>
+    </div>
+  </div>
+</section>
+<div style="height:72px"></div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="assets/brand/logo-horizontal-white.svg" alt="GB Homes Real Estate" width="250" height="44">
+        <p>Helping first-time buyers and investors across <span data-config="serviceArea">Toronto, the GTA &amp; Durham Region</span> buy with confidence.</p>
+        <p class="small"><span data-config="agentName">Gbenga</span>, <span data-config="registeredTitle"></span><br><span data-config="brokerageName"></span><span data-config-wrap><br><span data-config="brokerageAddress"></span></span></p>
+      </div>
+      <div>
+        <h4>Buy</h4>
+        <ul>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="first-time-buyers.html">First-time buyer guide</a></li>
+          <li><a href="investors.html">Investor guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="mortgage-calculator.html">Mortgage payment</a></li>
+          <li><a href="mortgage-calculator.html#afford">Affordability</a></li>
+          <li><a href="mortgage-calculator.html#closing">Land transfer tax</a></li>
+          <li><a href="investors.html#calculator">Rental cash flow</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li data-config-wrap><a data-config-href="phone" href="#"><span data-config="phone"></span></a></li>
+          <li data-config-wrap><a data-config-href="email" href="#"><span data-config="email"></span></a></li>
+          <li data-config-wrap><a data-config-href="instagram" href="#" rel="noopener"><span data-config="instagram"></span></a></li>
+          <li><a href="contact.html">Send a message</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> GB Homes Real Estate. All rights reserved.</span>
+      <span>Not intended to solicit buyers or sellers currently under contract. Calculators are estimates only.</span>
+    </div>
+  </div>
+</footer>
+<script src="js/config.js"></script>
+<script src="js/site.js"></script>
+<script src="js/finance.js"></script>
+<script src="js/mortgage.js"></script>
+</body>
+</html>
