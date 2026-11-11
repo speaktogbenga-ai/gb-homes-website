@@ -41,5 +41,5 @@ window.GB_CONFIG = {
   // Analytics & Logs → Web Analytics → Add a site → copy the token from the
   // snippet (the value after "token":). Not needed if your domain's DNS is on
   // Cloudflare with automatic setup turned on.
-  cloudflareAnalyticsToken: ""
+  cloudflareAnalyticsToken: "ca81f14b64aa4bf689d490418fbb843b"
 };
