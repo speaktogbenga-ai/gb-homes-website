@@ -15,6 +15,11 @@ It is plain HTML, CSS and JavaScript. There is nothing to install or build, so i
 | `investors.html` | Investor guide plus a rental cash-flow calculator (cap rate, cash-on-cash, DSCR, equity built) |
 | `contact.html` | Enquiry form that pre-fills from listing and guide buttons |
 
+## Downloads on the mortgage calculator page
+
+- **Download my results (PDF)**: builds a branded PDF of the visitor's numbers (all three tabs, the balance chart and the yearly schedule) right in their browser, using `js/report.js` and the PDF library in `js/vendor/`. Nothing is sent anywhere. Contact details come from `js/config.js`.
+- **Excel calculator (.xlsx)**: `assets/downloads/GB-Homes-Mortgage-Calculator.xlsx`, a branded workbook with the same maths as the website. To change it, edit and run `python3 tools/build_excel_calculator.py` (needs `pip install openpyxl pillow`).
+
 ## Before going live: fill in your details
 
 Open **`js/config.js`** and fill in:
