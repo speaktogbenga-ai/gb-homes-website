@@ -27,7 +27,8 @@ window.GB_CONFIG = {
   heroVideo: "https://videos.pexels.com/video-files/40807458/17436299_1920_1080_30fps.mp4",                          // e.g. "assets/video/hero.mp4"
   heroPoster: "https://images.pexels.com/videos/40807458/architectural-photography-contemporary-home-interior-design-luxury-interiors-40807458.jpeg?auto=compress&cs=tinysrgb&w=1920",                         // e.g. "assets/video/hero-poster.jpg"
 
-  // Optional: a booking link (Calendly, Google Calendar booking page, etc.).
+  // Online booking: paste your Calendly link here, e.g. "https://calendly.com/your-name/free-consultation".
+  // It shows a booking calendar on the Contact page. Leave "" to hide it.
   bookingUrl: "",
 
   // Supabase (database for leads and listings). From your Supabase project:
