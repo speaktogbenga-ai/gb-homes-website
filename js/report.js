@@ -70,13 +70,13 @@
       var ctx = c.getContext("2d");
       ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, c.width, c.height);
       ctx.drawImage(img, 0, 0, c.width, c.height);
-      try { return c.toDataURL("image/png"); } catch (e) { return null; }
+      try { return c.toDataURL("image/jpeg", 0.92); } catch (e) { return null; }
     });
   }
 
   function build(logo, chart) {
     var jsPDF = window.jspdf.jsPDF;
-    var doc = new jsPDF({ unit: "pt", format: "letter" });
+    var doc = new jsPDF({ unit: "pt", format: "letter", compress: true });
     var W = doc.internal.pageSize.getWidth(), H = doc.internal.pageSize.getHeight();
     var M = 40, CW = W - M * 2;
     var name = clean($("r-name") ? $("r-name").value : "");
@@ -185,7 +185,7 @@
       doc.text("Mortgage balance over time", M, y);
       y += 6;
       var ch = CW * 220 / 640;
-      doc.addImage(chart, "PNG", M, y, CW, ch);
+      doc.addImage(chart, "JPEG", M, y, CW, ch);
       y += ch + 16;
     }
 
