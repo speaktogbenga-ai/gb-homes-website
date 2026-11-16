@@ -138,6 +138,7 @@ h4 { font-size: 1.05rem; font-weight: 700; }
 }
 .nav a:hover { color: var(--red); }
 .nav a[aria-current="page"] { color: var(--red); }
+.nav a.btn[aria-current="page"] { color: #fff; }
 .nav .btn { margin-left: 8px; color: #fff; padding: 11px 18px; }
 .nav .btn:hover { color: #fff; }
 
@@ -507,3 +508,12 @@ dialog.listing-dialog::backdrop { background: rgba(10, 10, 10, 0.6); }
 .page-hero--photo .btn--ghost { color: #fff; }
 .page-hero--photo .btn--ghost:hover { background: #fff; border-color: #fff; color: var(--ink); }
 .page-hero--photo .seg { background: rgba(255,255,255,.94); border-color: transparent; }
+
+/* Online booking calendar (Contact page) */
+.booking[hidden] { display: none; }
+.booking-head { max-width: 640px; margin: 0 auto 28px; text-align: center; }
+.booking-card { padding: 8px; overflow: hidden; }
+.booking-embed iframe { display: block; width: 100%; height: 700px; border: 0; }
+.booking-embed--link { padding: 32px; text-align: center; }
+.booking-fallback { text-align: center; margin: 8px 0 6px; }
+@media (max-width: 640px) { .booking-embed iframe { height: 1000px; } }
