@@ -29,7 +29,7 @@ window.GB_CONFIG = {
 
   // Online booking: paste your Calendly link here, e.g. "https://calendly.com/your-name/free-consultation".
   // It shows a booking calendar on the Contact page. Leave "" to hide it.
-  bookingUrl: "",
+  bookingUrl: "https://calendly.com/realtorgbh/30min",
 
   // Supabase (database for leads and listings). From your Supabase project:
   // Project Settings → API Keys → the "Publishable key" (or legacy "anon public" key).
