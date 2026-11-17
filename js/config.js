@@ -14,6 +14,12 @@ window.GB_CONFIG = {
   phone: "(437) 235-2788",                //  e.g. "(416) 555-0123"
   email: "realtorgbh@gmail.com",          //  e.g. "hello@gbhomes.ca"
   instagram: "realtorgbhome",             // handle without the @
+
+  // WhatsApp: your number with country code, digits only (1 = Canada).
+  // Shows a green "Chat on WhatsApp" button on every page, plus links on the
+  // Contact page and footer. Leave "" to hide them all.
+  whatsapp: "14372352788",
+  whatsappMessage: "Hi Gbenga, I found you on gbluxuryhomes.ca and I'd like to chat about buying a home.",
   serviceArea: "Toronto, the GTA & Durham Region",
 
   // Optional: paste a Formspree (https://formspree.io) form URL here and the
