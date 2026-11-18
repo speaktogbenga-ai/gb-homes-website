@@ -553,3 +553,48 @@ dialog.listing-dialog::backdrop { background: rgba(10, 10, 10, 0.6); }
 @media print { .wa-float { display: none; } }
 .icon-badge--wa { background: #e7f8ee; color: #128c4b; }
 .icon-badge--wa svg { width: 22px; height: 22px; }
+
+/* ==========================================================================
+   Motion & polish (the animations themselves live in js/motion.js, powered by GSAP)
+   ========================================================================== */
+/* Hide the hero for a moment while the entrance animation gets ready (shown after 2.5s at most). */
+.motion .hero .wrap > *, .motion .page-hero .wrap { visibility: hidden; }
+/* GSAP takes over the simple fade-in when it is running. */
+.gsap-ready .reveal { opacity: 1; transform: none; transition: none; }
+.split-word, .split-word__inner { display: inline-block; }
+h1, h2 { text-wrap: balance; }
+.result-big, .program .amount, .stat .value { font-variant-numeric: tabular-nums; }
+
+/* Header gains a soft shadow once you scroll */
+.site-header { transition: box-shadow .3s ease, background .3s ease; }
+.site-header.is-scrolled { background: rgba(255, 255, 255, 0.97); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07); }
+
+/* Eyebrow labels get a short rule in front, a classic premium touch */
+.eyebrow::before {
+  content: ""; display: inline-block; width: 26px; height: 2px; margin-right: 10px;
+  background: currentColor; vertical-align: middle; position: relative; top: -2px;
+}
+
+/* Cards lift gently on hover */
+.service-card, .program { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease, border-color .35s ease; }
+.service-card:hover, .program:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: #ddd6cf; }
+.icon-badge { transition: background .35s ease, color .35s ease, transform .35s cubic-bezier(.2,.7,.2,1); }
+.service-card:hover .icon-badge { background: var(--red); color: #fff; transform: rotate(-6deg) scale(1.05); }
+.listing-card { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease; }
+.listing-card:hover { transform: translateY(-4px); }
+.listing-media { overflow: hidden; }
+.listing-media img { transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+.listing-card:hover .listing-media img { transform: scale(1.05); }
+
+/* Call-to-action band: a soft light highlight in the corner */
+.cta-band { background: radial-gradient(120% 140% at 100% 0%, #ff4d4d 0%, rgba(255, 77, 77, 0) 55%), var(--red); }
+
+/* "The process": a line that fills across the steps as you scroll */
+.steps { position: relative; }
+.steps-line { position: absolute; left: 0; right: 0; top: 46px; height: 2px; background: rgba(255, 255, 255, 0.12); border-radius: 2px; pointer-events: none; }
+.steps-line span { display: block; height: 100%; background: var(--red); transform-origin: left center; border-radius: 2px; }
+@media (max-width: 900px) { .steps-line { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card:hover, .program:hover, .listing-card:hover, .listing-card:hover .listing-media img, .service-card:hover .icon-badge { transform: none; }
+}
