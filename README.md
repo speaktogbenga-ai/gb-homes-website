@@ -19,6 +19,7 @@ It is plain HTML, CSS and JavaScript. There is nothing to install or build, so i
 
 - **Download my results (PDF)**: builds a branded PDF of the visitor's numbers (all three tabs, the balance chart and the yearly schedule) right in their browser, using `js/report.js` and the PDF library in `js/vendor/`. Nothing is sent anywhere. Contact details come from `js/config.js`.
 - **Excel calculator (.xlsx)**: `assets/downloads/GB-Homes-Mortgage-Calculator.xlsx`, a branded workbook with the same maths as the website. To change it, edit and run `python3 tools/build_excel_calculator.py` (needs `pip install openpyxl pillow`).
+- **Investors page** has the same box for the rental calculator: `js/rental-report.js` builds the "Download my analysis (PDF)" file, and `assets/downloads/GB-Homes-Rental-Calculator.xlsx` (rebuilt with `python3 tools/build_rental_calculator.py`) is the Excel version.
 
 ## Before going live: fill in your details
 

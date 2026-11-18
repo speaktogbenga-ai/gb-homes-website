@@ -13,7 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=wa20261117">
+<link rel="stylesheet" href="css/styles.css?v=motion20261118">
+<script>(function(d){try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches){d.classList.add("motion");setTimeout(function(){d.classList.remove("motion")},2500)}}catch(e){}})(document.documentElement)</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -98,6 +99,22 @@
       </div>
 
       <h2 id="calculator">Rental property calculator</h2>
+      <div class="download-bar" id="download" style="margin-top:20px">
+        <div class="download-bar__text">
+          <h2>Take your numbers with you</h2>
+          <p>Fill in the calculator below, then save a PDF of the rental analysis to keep or share. Or download the Excel calculator to compare properties on your own computer.</p>
+        </div>
+        <div class="download-bar__actions">
+          <label class="visually-hidden" for="r-name">Your name (optional, shown on the PDF)</label>
+          <input class="input" id="r-name" type="text" autocomplete="name" placeholder="Your name (optional)">
+          <label class="visually-hidden" for="r-address">Property address or nickname (optional, shown on the PDF)</label>
+          <input class="input" id="r-address" type="text" placeholder="Property address (optional)">
+          <div class="btn-row">
+            <button class="btn btn--red btn--sm" type="button" id="dl-rental-pdf"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg> Download my analysis (PDF)</button>
+            <a class="btn btn--ghost btn--sm" href="assets/downloads/GB-Homes-Rental-Calculator.xlsx" download><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg> Excel calculator (.xlsx)</a>
+          </div>
+        </div>
+      </div>
       <div class="calc" style="margin-top:20px">
         <form class="card calc-panel" onsubmit="return false" aria-label="Rental property details">
           <div class="field">
@@ -253,10 +270,14 @@
     </div>
   </div>
 </footer>
-<script src="js/config.js?v=wa20261117"></script>
-<script src="js/supabase.js?v=wa20261117"></script>
-<script src="js/site.js?v=wa20261117"></script>
-<script src="js/finance.js?v=wa20261117"></script>
-<script src="js/investor.js?v=wa20261117"></script>
+<script src="js/vendor/gsap.min.js?v=3.13.0"></script>
+<script src="js/vendor/ScrollTrigger.min.js?v=3.13.0"></script>
+<script src="js/config.js?v=motion20261118"></script>
+<script src="js/supabase.js?v=motion20261118"></script>
+<script src="js/site.js?v=motion20261118"></script>
+<script src="js/finance.js?v=motion20261118"></script>
+<script src="js/investor.js?v=motion20261118"></script>
+<script src="js/rental-report.js?v=motion20261118"></script>
+<script src="js/motion.js?v=motion20261118"></script>
 </body>
 </html>
