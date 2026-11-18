@@ -142,6 +142,7 @@
     }
     function bullets(list) {
       list.forEach(function (n) {
+        doc.setFont("helvetica", "normal"); doc.setFontSize(9);
         var lines = doc.splitTextToSize(n, CW - 16);
         ensure(lines.length * 12 + 6);
         doc.setFont("helvetica", "normal"); doc.setFontSize(9); doc.setTextColor.apply(doc, INK);
@@ -292,7 +293,7 @@
   }
 
   btn.addEventListener("click", function () {
-    var label = btn.textContent;
+    var label = btn.innerHTML;
     btn.disabled = true;
     btn.textContent = "Preparing your PDF…";
     Promise.all([loadLibs(), loadImage("assets/brand/logo-horizontal.png"), chartImage()])
@@ -300,12 +301,12 @@
       .catch(function (e) {
         if (window.console) console.error(e);
         btn.textContent = "Sorry, that didn't work. Please try again.";
-        setTimeout(function () { btn.textContent = label; }, 3500);
+        setTimeout(function () { btn.innerHTML = label; }, 3500);
         btn.disabled = false;
         return "failed";
       })
       .then(function (r) {
-        if (r !== "failed") { btn.textContent = label; btn.disabled = false; }
+        if (r !== "failed") { btn.innerHTML = label; btn.disabled = false; }
       });
   });
 })();
