@@ -147,7 +147,7 @@ h4 { font-size: 1.05rem; font-weight: 700; }
 }
 .nav-toggle svg { width: 28px; height: 28px; }
 
-@media (max-width: 960px) {
+@media (max-width: 1080px) {
   .nav-toggle { display: inline-flex; }
   .nav {
     position: fixed; inset: 72px 0 auto 0; flex-direction: column; align-items: stretch;
@@ -271,6 +271,7 @@ input[type="range"] { width: 100%; accent-color: var(--red); margin: 4px 0 0; }
 /* ---------- Calculator layout ---------- */
 .calc { display: grid; grid-template-columns: 400px 1fr; gap: 28px; align-items: start; }
 @media (max-width: 960px) { .calc { grid-template-columns: 1fr; } }
+@media (max-width: 1180px) { .guide-layout .calc { grid-template-columns: minmax(0, 1fr); } .guide-layout .calc-panel { position: static; } }
 .calc-panel { position: sticky; top: 96px; }
 @media (max-width: 960px) { .calc-panel { position: static; } }
 
@@ -371,7 +372,7 @@ dialog.listing-dialog::backdrop { background: rgba(10, 10, 10, 0.6); }
 }
 
 /* ---------- Guides ---------- */
-.guide-layout { display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; }
+.guide-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 48px; align-items: start; }
 .toc { position: sticky; top: 96px; font-size: 0.92rem; }
 .toc ol { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--line); }
 .toc a { display: block; padding: 7px 14px; text-decoration: none; color: var(--muted); margin-left: -2px; border-left: 2px solid transparent; }
@@ -504,6 +505,7 @@ dialog.listing-dialog::backdrop { background: rgba(10, 10, 10, 0.6); }
 .page-hero--investors { background-image: url("https://images.pexels.com/photos/8134821/pexels-photo-8134821.jpeg?auto=compress&cs=tinysrgb&w=1920"); }
 .page-hero--mortgage-calculator { background-image: url("https://images.pexels.com/photos/31737859/pexels-photo-31737859.jpeg?auto=compress&cs=tinysrgb&w=1920"); }
 .page-hero--contact { background-image: url("https://images.pexels.com/photos/7031406/pexels-photo-7031406.jpeg?auto=compress&cs=tinysrgb&w=1920"); }
+.page-hero--sellers { background-image: url("https://images.pexels.com/photos/7641828/pexels-photo-7641828.jpeg?auto=compress&cs=tinysrgb&w=1920"); }
 @media (max-width: 640px) { .page-hero--photo { padding: 88px 0 64px; } .page-hero--photo::before { background: rgba(10,10,12,.7); } }
 .page-hero--photo .btn--ghost { color: #fff; }
 .page-hero--photo .btn--ghost:hover { background: #fff; border-color: #fff; color: var(--ink); }
@@ -598,3 +600,4 @@ h1, h2 { text-wrap: balance; }
 @media (prefers-reduced-motion: reduce) {
   .service-card:hover, .program:hover, .listing-card:hover, .listing-card:hover .listing-media img, .service-card:hover .icon-badge { transform: none; }
 }
+.breakdown td:last-child { white-space: nowrap; }
