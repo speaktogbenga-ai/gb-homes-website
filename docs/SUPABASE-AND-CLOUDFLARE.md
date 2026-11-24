@@ -30,7 +30,7 @@ The website works without either service. Each one switches on when you fill in 
 
 ### Day to day
 - **New leads:** Table Editor → **leads**. Change `status` to `contacted`, `client` or `closed` as you go.
-- **Email alerts:** Supabase stores leads but doesn't email you. To also get each enquiry by email, set `formEndpoint` to a Formspree link. The form then does both.
+- **Email alerts:** Supabase stores leads, and `formEndpoint` (FormSubmit) also emails each enquiry to you. The form does both.
 - **Add a listing:** Table Editor → **listings** → Insert row.
   - The `id` becomes the link, for example `gbluxuryhomes.ca/listings.html#ajax-2-bed-condo`.
   - Untick `published` to hide a listing. Tick `featured` to show it on the home page.
