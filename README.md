@@ -27,7 +27,7 @@ Open **`js/config.js`** and fill in:
 
 - `registeredTitle` and `brokerageName`, exactly as registered with RECO. Until these are filled in, the footer shows a yellow reminder.
 - `phone` and `email`. Anything left empty is hidden from the site.
-- Optional: `formEndpoint` (a free [Formspree](https://formspree.io) form URL) so the contact form sends straight to your inbox. Without it, the form opens the visitor's email app addressed to your `email`.
+- `formEndpoint`: emails you every contact-form enquiry and home value request (free [FormSubmit](https://formsubmit.co) link, already set to your email). The very first time, FormSubmit sends an "Activate Form" email that you click once.
 - Optional: `bookingUrl` (Calendly or similar) to show a "Pick a time" button on the contact page.
 
 ## Adding or updating listings

@@ -22,10 +22,10 @@ window.GB_CONFIG = {
   whatsappMessage: "Hi Gbenga, I found you on gbluxuryhomes.ca and I'd like to chat about buying a home.",
   serviceArea: "Toronto, the GTA & Durham Region",
 
-  // Optional: paste a Formspree (https://formspree.io) form URL here and the
-  // contact form will submit straight to your inbox. If left empty, the form
-  // opens the visitor's email app with their message filled in instead.
-  formEndpoint: "",
+  // Email alerts: every contact-form enquiry and home value request is emailed
+  // here (via the free FormSubmit service, https://formsubmit.co). A Formspree
+  // form URL also works. If left empty, leads are only saved in Supabase.
+  formEndpoint: "https://formsubmit.co/ajax/realtorgbh@gmail.com",
 
   // Home page background video. Put an .mp4 file (ideally 1920x1080, under
   // 15 MB, 10-30 seconds, no sound) in assets/video/ and write its path here.
