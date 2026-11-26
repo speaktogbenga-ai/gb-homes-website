@@ -61,3 +61,8 @@ The maths lives in `js/finance.js` if any of these rules change.
 ## Supabase and Cloudflare
 
 Leads, editable listings, faster delivery and analytics are optional. See [docs/SUPABASE-AND-CLOUDFLARE.md](docs/SUPABASE-AND-CLOUDFLARE.md).
+
+## Google reviews
+
+Your Google reviews show on the home page ("What my clients say"), as a rating badge near the top of the Home, First-time buyers, Investors, Sellers and Contact pages, and in the footer of every page. They come from `js/reviews-data.js`. When you get a new review, add it at the top of that list and update `rating` and `count` (or ask Claude to do it). The "Leave a review" button opens Google's review form for your profile, so you can also send that link to clients:
+https://search.google.com/local/writereview?placeid=ChIJhQskzqpMCI0RzOU6A1fdVuE
