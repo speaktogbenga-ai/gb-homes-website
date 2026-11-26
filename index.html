@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=sellers20261124">
+<link rel="stylesheet" href="css/styles.css?v=reviews20261126">
 <script>(function(d){try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches){d.classList.add("motion");setTimeout(function(){d.classList.remove("motion")},2500)}}catch(e){}})(document.documentElement)</script>
 </head>
 <body>
@@ -47,6 +47,7 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Investor-focused analysis</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> No-pressure advice</li>
       </ul>
+      <a class="g-badge g-badge--hero" href="#reviews" data-google-badge>Rated 5.0 on Google</a>
       <p class="hero-call" data-config-wrap>Call or text <a data-config-href="phone" href="#"><span data-config="phone"></span></a></p>
     </div>
 
@@ -78,6 +79,28 @@
       <p class="muted small" id="qc-note"></p>
       <a class="link-arrow" href="mortgage-calculator.html" id="qc-more">Full calculator with closing costs</a>
     </form>
+  </div>
+</section>
+
+<section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+  <div class="wrap">
+    <div class="reviews-head">
+      <div>
+        <span class="eyebrow">Client reviews</span>
+        <h2 id="reviews-title">What my clients say</h2>
+        <p class="lead">Real reviews from buyers, sellers and renters, straight from Google.</p>
+      </div>
+      <div class="reviews-summary card reveal">
+        <div class="reviews-summary__score"><span data-review-rating>5.0</span><span data-review-stars></span></div>
+        <p class="reviews-summary__count">Based on <a data-review-link="all" href="#"><span data-review-count>Google reviews</span></a></p>
+        <div class="btn-row">
+          <a class="btn btn--red btn--sm" data-review-link="write" href="#">Leave a review</a>
+          <a class="btn btn--ghost btn--sm" data-review-link="all" href="#">Read them on Google</a>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-3 reviews-grid" id="reviews-grid"></div>
+    <div class="center reviews-more"><button type="button" class="btn btn--ghost" id="reviews-more" hidden>Show all reviews</button></div>
   </div>
 </section>
 
@@ -221,6 +244,7 @@
         <img class="footer-logo" src="assets/brand/logo-horizontal-white.svg" alt="GB Homes Real Estate" width="250" height="44">
         <p>Helping first-time buyers, investors and sellers across <span data-config="serviceArea">Toronto, the GTA &amp; Durham Region</span> move with confidence.</p>
         <p class="small"><span data-config="agentName">Gbenga</span>, <span data-config="registeredTitle"></span><br><span data-config="brokerageName"></span><span data-config-wrap><br><span data-config="brokerageAddress"></span></span></p>
+        <a class="g-badge g-badge--footer" data-google-badge>Rated 5.0 on Google</a>
       </div>
       <div>
         <h4>Buy &amp; sell</h4>
@@ -260,13 +284,15 @@
 </footer>
 <script src="js/vendor/gsap.min.js?v=3.13.0"></script>
 <script src="js/vendor/ScrollTrigger.min.js?v=3.13.0"></script>
-<script src="js/config.js?v=sellers20261124"></script>
-<script src="js/supabase.js?v=sellers20261124"></script>
-<script src="js/site.js?v=sellers20261124"></script>
-<script src="js/finance.js?v=sellers20261124"></script>
-<script src="js/listings-data.js?v=sellers20261124"></script>
-<script src="js/listings.js?v=sellers20261124"></script>
-<script src="js/home.js?v=sellers20261124"></script>
-<script src="js/motion.js?v=sellers20261124"></script>
+<script src="js/config.js?v=reviews20261126"></script>
+<script src="js/supabase.js?v=reviews20261126"></script>
+<script src="js/site.js?v=reviews20261126"></script>
+<script src="js/finance.js?v=reviews20261126"></script>
+<script src="js/listings-data.js?v=reviews20261126"></script>
+<script src="js/listings.js?v=reviews20261126"></script>
+<script src="js/home.js?v=reviews20261126"></script>
+<script src="js/reviews-data.js?v=reviews20261126"></script>
+<script src="js/reviews.js?v=reviews20261126"></script>
+<script src="js/motion.js?v=reviews20261126"></script>
 </body>
 </html>
